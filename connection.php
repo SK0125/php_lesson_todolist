@@ -18,4 +18,14 @@ function insertDb($data) {
   $stmt->execute();
 }
 
+function selectAll() {
+  $dbh = connectPdo();
+  $sql = 'SELECT * FROM todos WHERE deleted_at IS NULL';
+  $todo = array();
+  foreach($dbh->query($sql) as $row) {
+    array_push($todo, $row);
+  }
+  return $todo;
+}
+
 ?>
