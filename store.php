@@ -1,5 +1,7 @@
 <?php
 require('functions.php');
 
-create($_POST);
+//create($_POST);
+checkReferer();
+header('location: ./index.php');
 ?>
